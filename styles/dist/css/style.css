@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes circularMotion {
+  0% {
+    background-position: 100% 50%;
+  }
+  25% {
+    background-position: 75% 75%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 25% 75%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, figure, hr, fieldset, legend, button, input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  min-height: 100dvh;
+}
+
+body.transition,
+.container.transition,
+.subcontainer.transition,
+[class^=block-].transition,
+.theme.transition i {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, background-image 0.4s ease;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+fieldset {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --bg-color: #333;
+  --container-color: #222;
+  --border-color: #6e6e6e;
+  --black: black;
+  --white: white;
+  --bg-img: url(/assets/background-image-dark.webp);
+}
+
+[data-theme=light] {
+  --bg-color: #f0f0f0;
+  --container-color: #ffffff;
+  --border-color: #cccccc;
+  --black: #e4e4e4;
+  --white: #333;
+  --bg-img: url(/assets/background-image-light.webp);
+}
+
+body {
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-color: var(--black);
+  width: 60%;
+  height: 70vh;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px;
+  animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.container .subcontainer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--container-color);
+  border-radius: 30.5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+.container .subcontainer .left-side-container {
+  height: 100%;
+  width: 75%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.container .subcontainer .left-side-container .top-container,
+.container .subcontainer .left-side-container .center-container,
+.container .subcontainer .left-side-container .bottom-container {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+.container .subcontainer .left-side-container .top-container .block-one {
+  background-image: url(https://picsum.photos/seed/one/1600/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .top-container .block-two {
+  background-image: url(https://picsum.photos/seed/two/1600/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .center-container .block-one {
+  background-image: url(https://picsum.photos/seed/three/800/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .center-container .block-two {
+  flex-grow: 1.5;
+  background-image: url(https://picsum.photos/seed/four/540/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .center-container .block-three {
+  background-image: url(https://picsum.photos/seed/five/800/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .bottom-container .block-one {
+  background-image: url(https://picsum.photos/seed/six/1100/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .bottom-container .block-two {
+  background-image: url(https://picsum.photos/seed/seven/920/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .bottom-container .block-three {
+  background-image: url(https://picsum.photos/seed/eight/1100/740);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .left-side-container .bottom-container .block-one,
+.container .subcontainer .left-side-container .bottom-container .block-three {
+  flex-grow: 1.2;
+}
+.container .subcontainer .left-side-container .block-one {
+  flex-grow: 1;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 20px;
+}
+.container .subcontainer .left-side-container .block-two {
+  flex-grow: 1;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 20px;
+}
+.container .subcontainer .left-side-container .block-three {
+  flex-grow: 1;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 20px;
+}
+.container .subcontainer .right-side-container {
+  height: 100%;
+  flex-grow: 1;
+  padding: 15px;
+  padding-left: 0;
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .subcontainer .right-side-container .block-one {
+  background-image: url(https://picsum.photos/seed/nine/1140/1080);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .right-side-container .block-two {
+  background-image: url(https://picsum.photos/seed/ten/1140/1080);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .subcontainer .right-side-container .block-one,
+.container .subcontainer .right-side-container .block-two {
+  width: 100%;
+  flex-grow: 1;
+  background-color: var(--bg-color);
+  border-radius: 20px;
+}
+
+[class^=block-] {
+  border: 2px solid var(--border-color);
+}
+
+.theme {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.theme i {
+  color: var(--white);
+  font-size: 1.5rem;
+}/*# sourceMappingURL=style.css.map */

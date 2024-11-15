@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, figure, hr, fieldset, legend, button, input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  @include flex;
+  min-height: 100dvh;
+}
+
+body.transition,
+.container.transition,
+.subcontainer.transition,
+[class^="block-"].transition,
+.theme.transition i {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, background-image 0.4s ease;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+fieldset {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
